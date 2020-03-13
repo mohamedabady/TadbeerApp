@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { Image, View, Text } from 'react-native';
 
 //Import Tab Screens
-import { Home, Candidates, Centers, Profile, Requests } from '../Screens/index';
+import { Candidates, Centers, Profile, Requests } from '../Screens/index';
+
+import {HomeStack} from './AppStackNavigators'
 
 //Import Packages
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
@@ -80,7 +82,7 @@ export default class BottomNavigator extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    {this.state.activeTab === 'Home' && <Home/>}
+                    {this.state.activeTab === 'Home' && <HomeStack/>}
                     {this.state.activeTab === 'Candidates' && <Candidates/>}
                     {this.state.activeTab === 'Centers' && <Centers/>}
                     {this.state.activeTab === 'Requests' && <Requests/>}

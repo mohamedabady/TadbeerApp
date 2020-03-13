@@ -12,3 +12,6 @@ export {Requests};
 
 import Profile from './ProfileScreen/Profile';
 export {Profile};
+
+import PackagesList from './PackagesListScreen/PackagesList';
+export {PackagesList};

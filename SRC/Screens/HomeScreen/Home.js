@@ -14,10 +14,10 @@ import {HomeStyles} from './HomeStyles'
 export default class Home extends Component {
   render() {
     return (
-      <LinearGradient colors={[Colors.screenTopGradient, Colors.screenBottomGradient]} style={HomeStyles.mainContainer}>
+      <LinearGradient colors={[Colors.mainColor, Colors.homeScreenBottomGradient]} style={HomeStyles.mainContainer}>
         <Text style={HomeStyles.titleText}>Service Type</Text>
 
-        <TouchableOpacity style={HomeStyles.mainButton}>
+        <TouchableOpacity style={HomeStyles.mainButton} onPress={()=>this.props.navigation.navigate('PackagesList')}>
           <Text style={HomeStyles.buttonTitle}>On Demand Services</Text>
           <Text style={HomeStyles.buttonDesc}>Request workers for short term chores / jobs (maximum of 8 hours per day)</Text>
           <Image source={require('../../Assets/Images/arrowRight.png')} style={HomeStyles.imageStyle}/> 
