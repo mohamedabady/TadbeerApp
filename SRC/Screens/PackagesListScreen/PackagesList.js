@@ -1,144 +1,41 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, TouchableWithoutFeedback, Image, StyleSheet } from 'react-native';
+import { View, Text, Dimensions, TouchableWithoutFeedback, Image } from 'react-native';
 
 //PackagesImport
 import LinearGradient from 'react-native-linear-gradient';
-import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
+import { TouchableOpacity, TextInput, FlatList } from 'react-native-gesture-handler';
 
 //Constants Import
 import { Colors } from '../../Constants/Colors';
 import { Fonts } from '../../Constants/Fonts';
 import { ServiceTypes } from '../../Constants/ServiceTypes';
-import { ServiceCategories } from '../../Constants/Categories';
+
+//Dummy Data Import
+import {Categories} from './Categories';
 
 //Styles Import
-import Styles from './PackagesListStyles';
-import { TouchableOpacity, TextInput, FlatList } from 'react-native-gesture-handler';
+import {PackagesListStyles as styles} from './PackagesListStyles';
+
+//Custom Components Import
+import DrawerMenu from '../../Components/PackgesListComponents/DrawerMenu'
 
 export default class PackagesList extends Component {
-  Categories = [
-    {
-      id: 1,
-      category: ServiceCategories.nanny,
-      number: 110,
-      date: '10/9/2019'
-    },
-    {
-      id: 2,
-      category: ServiceCategories.chef,
-      number: 50,
-      date: '7/9/2019'
-    },
-    {
-      id: 3,
-      category: ServiceCategories.privateCoach,
-      number: 200,
-      date: '2/9/2019',
-    },
-    {
-      id: 4,
-      category: ServiceCategories.chaufeur,
-      number: 100,
-      date: '12/9/2019'
-    },
-    {
-      id: 5,
-      category: ServiceCategories.maid,
-      number: 640,
-      date: '1/9/2019'
-    },
-    {
-      id: 6,
-      category: ServiceCategories.gardener,
-      number: 120,
-      date: '15/9/2019'
-    },
-    {
-      id: 7,
-      category: ServiceCategories.worker,
-      number: 56,
-      date: '3/9/2019'
-    },
-    {
-      id: 8,
-      category: ServiceCategories.shepherd,
-      number: 40,
-      date: '14/9/2019'
-    },
-    {
-      id: 9,
-      category: ServiceCategories.privatePro,
-      number: 40,
-      date: '8/9/2019'
-    },
-    {
-      id: 10,
-      category: ServiceCategories.privateSailor,
-      number: 20,
-      date: '9/9/2019'
-    },
-    {
-      id: 11,
-      category: ServiceCategories.falconTrainer,
-      number: 10,
-      date: '20/9/2019'
-    },
-    {
-      id: 12,
-      category: ServiceCategories.nurse,
-      number: 110,
-      date: '19/9/2019'
-    },
-    {
-      id: 13,
-      category: ServiceCategories.groomer,
-      number: 120,
-      date: '11/9/2019'
-    },
-    {
-      id: 14,
-      category: ServiceCategories.houseKeeper,
-      number: 534,
-      date: '18/9/2019'
-    },
-    {
-      id: 15,
-      category: ServiceCategories.labourer,
-      number: 120,
-      date: '22/9/2019'
-    },
-    {
-      id: 16,
-      category: ServiceCategories.farmer,
-      number: 100
-    },
-    {
-      id: 17,
-      category: ServiceCategories.agricultureEng,
-      number: 9,
-      date: '21/9/2019'
-    },
-    {
-      id: 18,
-      category: ServiceCategories.watchMan,
-      number: 120,
-      date: '23/9/2019'
-    }
-  ]
-
   constructor(props) {
     super(props);
     this.state = {
-      selectedService: ServiceTypes.longTerm,
-      dataCategories: this.Categories,
-      selectedCategory: this.Categories[0]
+      selectedService: props.route.params.serviceType,
+      dataCategories: Categories,
+      selectedCategory: Categories[0],
+      isDarwerOpen: false,
+      isEnglish: true
     }
   }
 
   _renderSearchBar = () => {
     return (
       <View style={styles.searchContainer}>
-        <TouchableOpacity style={[styles.drawerButton, {backgroundColor: this._selectColor()[1]}]}>
+        <TouchableOpacity style={[styles.drawerButton, {backgroundColor: this._selectColor()[1]}]} onPress={()=>this.setState({isDarwerOpen: true})}>
           <Image resizeMode='contain' source={require('../../Assets/Images/drawerIcon.png')} style={{ width: RFValue(22.7), height: RFValue(22.7) }} />
         </TouchableOpacity>
         <TextInput
@@ -153,20 +50,20 @@ export default class PackagesList extends Component {
     const { selectedService } = this.state;
     return (
       <View style={styles.topTabsContainer}>
-        <TouchableWithoutFeedback onPress={() => this.setState({ selectedService: ServiceTypes.onDemand, selectedCategory: this.Categories[0] })}>
+        <TouchableWithoutFeedback onPress={() => this.setState({ selectedService: ServiceTypes.onDemand, selectedCategory: Categories[0] })}>
           <View style={{ alignItems: 'center', width: Dimensions.get('window').width * 0.2 }}>
             <Text style={selectedService === ServiceTypes.onDemand ? styles.selectedTabText : styles.unSelectedTabText}>ON DEMAND</Text>
             {selectedService === ServiceTypes.onDemand && <View style={[styles.selectionBar, { marginTop: RFValue(18) }]} />}
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => this.setState({ selectedService: ServiceTypes.longTerm, selectedCategory: this.Categories[0] })}>
+        <TouchableWithoutFeedback onPress={() => this.setState({ selectedService: ServiceTypes.longTerm, selectedCategory: Categories[0] })}>
           <View style={{ alignItems: 'center', width: Dimensions.get('window').width * 0.53 }}>
             <Text style={selectedService === ServiceTypes.longTerm ? styles.selectedTabText : styles.unSelectedTabText}>LONG TERM</Text>
             {selectedService === ServiceTypes.longTerm && <Text style={styles.descriptionTap}>Starting from 6 month</Text>}
             {selectedService === ServiceTypes.longTerm && <View style={styles.selectionBar} />}
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => this.setState({ selectedService: ServiceTypes.history, selectedCategory: this.Categories[0] })}>
+        <TouchableWithoutFeedback onPress={() => this.setState({ selectedService: ServiceTypes.history, selectedCategory: Categories[0] })}>
           <View style={{ alignItems: 'center', width: Dimensions.get('window').width * 0.2 }}>
             <Text style={selectedService === ServiceTypes.history ? styles.selectedTabText : styles.unSelectedTabText}>HISTORY</Text>
             {selectedService === ServiceTypes.history && <Text style={styles.descriptionTap}>Search history</Text>}
@@ -176,12 +73,13 @@ export default class PackagesList extends Component {
       </View>
     )
   }
+
   _renderListItem = (item) => {
     let isItemSelected = this.state.selectedCategory.id === item.id;
     if (this.state.selectedService === ServiceTypes.longTerm) {
       return (
         <TouchableOpacity style={styles.longTermCategotyItem} onPress={()=>this.setState({selectedCategory: item})}>
-          <Text style={[styles.categoryName, { marginStart: RFValue(40), marginEnd: RFValue(6), fontFamily: isItemSelected ? Fonts.apercuBold : Fonts.apercuLight, color: isItemSelected ? 'white' : Colors.whiteOpacity05 }]}>{item.category}</Text>
+          <Text style={[styles.categoryName, { marginStart: RFValue(40), marginEnd: RFValue(4), fontFamily: isItemSelected ? Fonts.apercuBold : Fonts.apercuLight, color: isItemSelected ? 'white' : Colors.whiteOpacity05 }]}>{item.category}</Text>
           <Text style={[styles.categoryDate, { color: isItemSelected ? 'white' : Colors.whiteOpacity05 }]}>{item.number}</Text>
         </TouchableOpacity>
       )
@@ -194,16 +92,18 @@ export default class PackagesList extends Component {
         </TouchableOpacity>)
     }
   }
+
   _renderList = () => {
     return (
       <FlatList
         data={this.state.dataCategories}
-        keyExtractor={category => category.id}
+        keyExtractor={category => category.id.toString()}
         style={{ height: Dimensions.get('window').height * 0.7, width: '100%' }}
         ItemSeparatorComponent={() => (this.state.selectedService === ServiceTypes.history && <View style={{ backgroundColor: 'rgba(255,255,255,0.25)', alignSelf: 'center', width: RFValue(36), height: RFValue(1) }} />)}
         renderItem={({ item }) => this._renderListItem(item)} />
     )
   }
+
   _selectColor=()=>{
     switch(this.state.selectedCategory.id){
       case 1:
@@ -246,95 +146,23 @@ export default class PackagesList extends Component {
         return [Colors.privateTutor, Colors.searchPrivateTutor];
     }
   }
+  _renderBackDrop=()=>{
+    return(
+      <TouchableWithoutFeedback onPress={()=>this.setState({isDarwerOpen: false})}>
+        <View style={{flex:1, width:Dimensions.get('window').width, height:Dimensions.get('window').height, backgroundColor:'rgba(0,0,0,0.7)', position:'absolute', top:0, bottom:0, left:0, right:0}}/>
+      </TouchableWithoutFeedback>
+    )
+  }
+
   render() {
     return (
       <LinearGradient colors={[this._selectColor()[0], Colors.mainColor]} style={styles.screenContainer}>
+        <DrawerMenu isDrawerOpen={this.state.isDarwerOpen} closeDrawer={()=>this.setState({isDarwerOpen: false})} isEnglish={this.state.isEnglish}/>
         {this._renderSearchBar()}
         {this._renderTopTabBar()}
         {this._renderList()}
+        {this.state.isDarwerOpen && this._renderBackDrop()}
       </LinearGradient>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
-    width: Dimensions.get('window').width,
-    alignItems: 'center',
-    paddingTop: '5%'
-  },
-  searchContainer: {
-    alignItems: 'center',
-    paddingHorizontal: RFValue(12),
-    flexDirection: 'row'
-  },
-  drawerButton: {
-    marginEnd: RFValue(8),
-    borderRadius: RFValue(20),
-    width: RFValue(40),
-    height: RFValue(40),
-    backgroundColor: Colors.searchBackgroundColor,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  inputStyle: {
-    fontSize: RFValue(14),
-    fontFamily: 'Apercu Medium',
-    width: '85%',
-    height: RFValue(40),
-    backgroundColor: Colors.searchBackgroundColor,
-    borderRadius: RFValue(20),
-    paddingHorizontal: RFValue(10)
-  },
-  topTabsContainer: {
-    marginTop: RFValue(20),
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '90%'
-  },
-  unSelectedTabText: {
-    fontSize: 14,
-    fontFamily: Fonts.apercuMedium,
-    color: Colors.whiteOpacity05
-  },
-  selectedTabText: {
-    fontSize: 14,
-    fontFamily: Fonts.apercuBold,
-    color: 'white'
-  },
-  selectionBar: {
-    marginTop: RFValue(10),
-    height: RFValue(6),
-    width: RFValue(23),
-    borderRadius: RFValue(6),
-    backgroundColor: 'white'
-  },
-  descriptionTap: {
-    fontSize: 12,
-    fontFamily: Fonts.apercuMedium,
-    color: Colors.whiteOpacity05
-  },
-  listItem: {
-    alignItems: 'center',
-    marginVertical: RFValue(16)
-  },
-  categoryName: {
-    fontSize: RFValue(45),
-    fontFamily: Fonts.apercuBold
-  },
-  categoryNumber: {
-    fontSize: RFValue(14),
-    fontFamily: Fonts.apercuMedium
-  },
-  categoryDate: {
-    fontSize: RFValue(14),
-    fontFamily: Fonts.apercuMedium
-  },
-  longTermCategotyItem: {
-    marginVertical: RFValue(6),
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginEnd: RFValue(12)
-  }
-})

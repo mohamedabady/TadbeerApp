@@ -33,7 +33,7 @@ export default class BottomNavigator extends Component {
         },
         {
             key: 'Centers',
-            iconSelected: require('../Assets/Images/Centers.png'),
+            iconSelected: require('../Assets/Images/CentersFocused.png'),
             iconNotSelected: require('../Assets/Images/Centers.png'),
             label: 'Centers',
             barColor: 'transparent',
@@ -41,7 +41,7 @@ export default class BottomNavigator extends Component {
         },
         {
             key: 'Requests',
-            iconSelected: require('../Assets/Images/Requests.png'),
+            iconSelected: require('../Assets/Images/RequestsFocused.png'),
             iconNotSelected: require('../Assets/Images/Requests.png'),
             label: 'Requests',
             barColor: 'transparent',

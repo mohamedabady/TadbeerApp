@@ -6,6 +6,9 @@ export const Colors = {
     listScreenTopGradient:'#D9A0AF',
     searchBackgroundColor:'#F0BBD2',
     whiteOpacity05:'rgba(255,255,255,0.5)',
+    drawerColor:'#1F0D7B',
+    drawerOpacity:'rgba(31,13,123,0.5)',
+
     nanny:'#F89A9A',
     chefColor:'#FDD485',
     privateCoach:'#C29AF8',
