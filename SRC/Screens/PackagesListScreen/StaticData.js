@@ -109,3 +109,62 @@ export const Categories = [
       date: '23/9/2019'
     }
   ]
+
+
+  export const Countries = [
+    {
+      id:0,
+      name:'Afghanistan',
+      image:require('../../Assets/Images/Afghanistan.png'),
+      isSelected:false
+    },
+    {
+      id:1,
+      name:'Vietnam',
+      image:require('../../Assets/Images/Vietnam.png'),
+      isSelected:false
+    },
+    {
+      id:2,
+      name:'India',
+      image:require('../../Assets/Images/India.png'),
+      isSelected:false
+    },
+    {
+      id:3,
+      name:'Canada',
+      image:require('../../Assets/Images/Canada.png'),
+      isSelected:false
+    },
+    {
+      id:4,
+      name:'France',
+      image:require('../../Assets/Images/France.png'),
+      isSelected:false
+    },
+    {
+      id:5,
+      name:'Mozambique',
+      image:require('../../Assets/Images/Mozambique.png'),
+      isSelected:false
+    },
+  ]
+
+  export const Packages = [
+    {
+      id:0,
+      name:'Traditional',
+      isSelected:false
+    },
+    {
+      id:1,
+      name:'Temporary',
+      isSelected:false
+    },
+    {
+      id:2,
+      name:'Flexible',
+      isSelected:false
+    },
+    
+  ]
