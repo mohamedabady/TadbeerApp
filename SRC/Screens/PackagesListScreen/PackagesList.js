@@ -12,13 +12,14 @@ import { Fonts } from '../../Constants/Fonts';
 import { ServiceTypes } from '../../Constants/ServiceTypes';
 
 //Dummy Data Import
-import {Categories} from './Categories';
+import { Categories } from './Categories';
 
 //Styles Import
-import {PackagesListStyles as styles} from './PackagesListStyles';
+import { PackagesListStyles as styles } from './PackagesListStyles';
 
 //Custom Components Import
-import DrawerMenu from '../../Components/PackgesListComponents/DrawerMenu'
+import DrawerMenu from '../../Components/PackgesListComponents/DrawerMenu';
+import SearchModal from '../../Components/PackgesListComponents/SearchModal';
 
 export default class PackagesList extends Component {
   constructor(props) {
@@ -35,13 +36,13 @@ export default class PackagesList extends Component {
   _renderSearchBar = () => {
     return (
       <View style={styles.searchContainer}>
-        <TouchableOpacity style={[styles.drawerButton, {backgroundColor: this._selectColor()[1]}]} onPress={()=>this.setState({isDarwerOpen: true})}>
+        <TouchableOpacity style={[styles.drawerButton, { backgroundColor: this._selectColor()[1] }]} onPress={() => this.setState({ isDarwerOpen: true })}>
           <Image resizeMode='contain' source={require('../../Assets/Images/drawerIcon.png')} style={{ width: RFValue(22.7), height: RFValue(22.7) }} />
         </TouchableOpacity>
         <TextInput
           placeholder={'Try typing “Indonesian maid, 24”'}
           placeholderTextColor={Colors.whiteOpacity05}
-          style={[styles.inputStyle, {backgroundColor: this._selectColor()[1]}]} />
+          style={[styles.inputStyle, { backgroundColor: this._selectColor()[1] }]} />
       </View>
     )
   }
@@ -78,7 +79,7 @@ export default class PackagesList extends Component {
     let isItemSelected = this.state.selectedCategory.id === item.id;
     if (this.state.selectedService === ServiceTypes.longTerm) {
       return (
-        <TouchableOpacity style={styles.longTermCategotyItem} onPress={()=>this.setState({selectedCategory: item})}>
+        <TouchableOpacity style={styles.longTermCategotyItem} onPress={() => this.setState({ selectedCategory: item })}>
           <Text style={[styles.categoryName, { marginStart: RFValue(40), marginEnd: RFValue(4), fontFamily: isItemSelected ? Fonts.apercuBold : Fonts.apercuLight, color: isItemSelected ? 'white' : Colors.whiteOpacity05 }]}>{item.category}</Text>
           <Text style={[styles.categoryDate, { color: isItemSelected ? 'white' : Colors.whiteOpacity05 }]}>{item.number}</Text>
         </TouchableOpacity>
@@ -86,7 +87,7 @@ export default class PackagesList extends Component {
     }
     if (this.state.selectedService === ServiceTypes.history) {
       return (
-        <TouchableOpacity style={styles.listItem} onPress={()=>this.setState({selectedCategory: item})}>
+        <TouchableOpacity style={styles.listItem} onPress={() => this.setState({ selectedCategory: item })}>
           <Text style={[styles.categoryName, { color: isItemSelected ? 'white' : Colors.whiteOpacity05, fontFamily: isItemSelected ? Fonts.apercuBold : Fonts.apercuLight }]}>{item.category}</Text>
           <Text style={[styles.categoryDate, { color: isItemSelected ? 'white' : Colors.whiteOpacity05 }]}>{item.date}</Text>
         </TouchableOpacity>)
@@ -98,29 +99,29 @@ export default class PackagesList extends Component {
       <FlatList
         data={this.state.dataCategories}
         keyExtractor={category => category.id.toString()}
-        style={{ height: Dimensions.get('window').height * 0.7, width: '100%' }}
+        style={{ maxHeight: Dimensions.get('window').height * 0.6, width: '100%' }}
         ItemSeparatorComponent={() => (this.state.selectedService === ServiceTypes.history && <View style={{ backgroundColor: 'rgba(255,255,255,0.25)', alignSelf: 'center', width: RFValue(36), height: RFValue(1) }} />)}
         renderItem={({ item }) => this._renderListItem(item)} />
     )
   }
 
-  _selectColor=()=>{
-    switch(this.state.selectedCategory.id){
+  _selectColor = () => {
+    switch (this.state.selectedCategory.id) {
       case 1:
         return [Colors.nanny, Colors.searchNanny];
       case 2:
         return [Colors.chefColor, Colors.searchChef];
-      case 3: 
+      case 3:
         return [Colors.privateCoach, Colors.searchPrivateCoach];
       case 4:
         return [Colors.chaufeur, Colors.searchChaufeur];
       case 5:
         return [Colors.maid, Colors.searchMaid];
-      case 6: 
+      case 6:
         return [Colors.gardener, Colors.searchGardener];
       case 7:
         return [Colors.worker, Colors.searchWorker];
-      case 8: 
+      case 8:
         return [Colors.shepherd, Colors.searchShepherd];
       case 9:
         return [Colors.privatePro, Colors.searchPrivatePro];
@@ -136,7 +137,7 @@ export default class PackagesList extends Component {
         return [Colors.houseKeeper, Colors.searchHouseKeeper];
       case 15:
         return [Colors.lobourer, Colors.searchLobourer];
-      case 16: 
+      case 16:
         return [Colors.farmer, Colors.searchFarmer];
       case 17:
         return [Colors.agricultureEng, Colors.searchAgricultureEng];
@@ -146,10 +147,10 @@ export default class PackagesList extends Component {
         return [Colors.privateTutor, Colors.searchPrivateTutor];
     }
   }
-  _renderBackDrop=()=>{
-    return(
-      <TouchableWithoutFeedback onPress={()=>this.setState({isDarwerOpen: false})}>
-        <View style={{flex:1, width:Dimensions.get('window').width, height:Dimensions.get('window').height, backgroundColor:'rgba(0,0,0,0.7)', position:'absolute', top:0, bottom:0, left:0, right:0}}/>
+  _renderBackDrop = () => {
+    return (
+      <TouchableWithoutFeedback onPress={() => this.setState({ isDarwerOpen: false })}>
+        <View style={{ flex: 1, width: Dimensions.get('window').width, height: Dimensions.get('window').height, backgroundColor: 'rgba(0,0,0,0.7)', position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }} />
       </TouchableWithoutFeedback>
     )
   }
@@ -157,11 +158,13 @@ export default class PackagesList extends Component {
   render() {
     return (
       <LinearGradient colors={[this._selectColor()[0], Colors.mainColor]} style={styles.screenContainer}>
-        <DrawerMenu isDrawerOpen={this.state.isDarwerOpen} closeDrawer={()=>this.setState({isDarwerOpen: false})} isEnglish={this.state.isEnglish}/>
+        <DrawerMenu isDrawerOpen={this.state.isDarwerOpen} closeDrawer={() => this.setState({ isDarwerOpen: false })} isEnglish={this.state.isEnglish} />
         {this._renderSearchBar()}
         {this._renderTopTabBar()}
         {this._renderList()}
+
         {this.state.isDarwerOpen && this._renderBackDrop()}
+        {this.state.selectedService === ServiceTypes.longTerm && <SearchModal />}
       </LinearGradient>
     );
   }
