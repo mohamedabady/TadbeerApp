@@ -6,6 +6,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import { RFValue } from "react-native-responsive-fontsize";
 import { TouchableOpacity, TextInput, FlatList } from 'react-native-gesture-handler';
 import SwipeUpDown from 'react-native-swipe-up-down';
+import MultiSlider from '@ptomasroos/react-native-multi-slider';
+import Modal from "react-native-modal";
 
 //Constants Import
 import { Colors } from '../../Constants/Colors';
@@ -20,7 +22,7 @@ import { PackagesListStyles as styles } from './PackagesListStyles';
 
 //Custom Components Import
 import DrawerMenu from '../../Components/PackgesListComponents/DrawerMenu';
-import SearchModal from '../../Components/PackgesListComponents/SearchModal';
+
 
 export default class PackagesList extends Component {
   swipeUpDownRef;
@@ -34,8 +36,11 @@ export default class PackagesList extends Component {
       isEnglish: true,
       isSearchModalOpen: false,
       countries: Countries,
-      packages: Packages
-    }
+      packages: Packages,
+      ageStart: 18,
+      ageEnd: 50
+    };
+    this._renderList = this._renderList.bind(this);
   }
 
   _renderSearchBar = () => {
@@ -102,10 +107,14 @@ export default class PackagesList extends Component {
   _renderList = () => {
     return (
       <FlatList
+        ref={ref => this.flatListRef = ref}
+        //initialScrollIndex={this.state.selectedCategory.id-1}
         horizontal={this.state.isSearchModalOpen}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
         data={this.state.dataCategories}
         keyExtractor={category => category.id.toString()}
-        style={{ maxHeight: Dimensions.get('window').height * 0.7, width: '100%' }}
+        style={{ maxHeight: this.state.isSearchModalOpen ? RFValue(75) : Dimensions.get('window').height * 0.7, width: '100%' }}
         ItemSeparatorComponent={() => (this.state.selectedService === ServiceTypes.history && <View style={{ backgroundColor: 'rgba(255,255,255,0.25)', alignSelf: 'center', width: RFValue(36), height: RFValue(1) }} />)}
         renderItem={({ item }) => this._renderListItem(item)} />
     )
@@ -175,10 +184,14 @@ export default class PackagesList extends Component {
     }
 
     return (
-      <View style={{ paddingHorizontal: RFValue(20), backgroundColor: 'white', position: 'absolute', bottom: 0, width: Dimensions.get('window').width, alignSelf: 'center', borderTopLeftRadius: RFValue(20), borderTopRightRadius: RFValue(20), height: Dimensions.get('window').height * 0.7 }}>
-        <View style={{ width: RFValue(37), height: RFValue(6), borderRadius: RFValue(3), backgroundColor: '#C1C1C1', alignSelf: 'center', marginVertical: RFValue(12) }} />
+      <View style={{ paddingHorizontal: RFValue(20), backgroundColor: 'white', position: 'absolute', bottom: RFValue(-18), width: Dimensions.get('window').width, alignSelf: 'center', borderTopLeftRadius: RFValue(20), borderTopRightRadius: RFValue(20), height: Dimensions.get('window').height * 0.6 }}>
+        <TouchableOpacity onPress={() => {
+          setTimeout(() => this.flatListRef.scrollToIndex({ animated: true, index: this.state.selectedCategory.id - 1 }), 1500)
+          this.setState({ isSearchModalOpen: false })
+        }}
+          style={{ width: RFValue(37), height: RFValue(6), borderRadius: RFValue(3), backgroundColor: '#C1C1C1', alignSelf: 'center', marginVertical: RFValue(12) }} />
 
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: RFValue(32) }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: RFValue(16) }}>
           <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(12), color: '#707070' }}>FROM</Text>
           <TouchableOpacity style={{ borderRadius: RFValue(10), height: RFValue(20), paddingHorizontal: RFValue(10), borderWidth: RFValue(1), borderColor: '#707070', justifyContent: 'center', alignItems: 'center' }}>
             <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(12), color: '#707070' }}>SELECT ALL</Text>
@@ -199,12 +212,12 @@ export default class PackagesList extends Component {
                   this.setState({})
                 }}
                 style={[{ flexDirection: 'row', borderRadius: RFValue(10), marginTop: RFValue(18), marginHorizontal: RFValue(16), height: RFValue(50), justifyContent: 'center', alignItems: 'center', paddingHorizontal: RFValue(12), borderWidth: RFValue(1), borderColor: '#707070', backgroundColor: item.isSelected ? 'white' : 'transparent' }, item.isSelected && shadow]}>
-                <Image resizeMode='contain' source={item.image} style={{ marginEnd: RFValue(10), height: RFValue(15), width: RFValue(15), borderRadius: RFValue(7.5), borderWidth: RFValue(0.5), borderColor: '#707070' }} />
-                <Text style={{ fontSize: RFValue(24), fontFamily: Fonts.apercuMedium, color: '#707070' }}>{item.name}</Text>
+                <Image resizeMode='contain' source={item.image} style={{ marginEnd: RFValue(10), height: RFValue(15), width: RFValue(15) }} />
+                <Text style={{ fontSize: RFValue(24), fontFamily: Fonts.apercuMedium, color: item.isSelected ? '#463795' : '#707070' }}>{item.name}</Text>
               </TouchableOpacity>)
           }} />
 
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: RFValue(32) }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: RFValue(16) }}>
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(12), color: '#707070' }}>PACKAGES</Text>
             <Image style={{ width: RFValue(20), height: RFValue(20), marginStart: RFValue(8) }} source={require('../../Assets/Images/PackagesIcon.png')} />
@@ -230,14 +243,43 @@ export default class PackagesList extends Component {
                   this.setState({})
                 }}
                 style={[{ flexDirection: 'row', borderRadius: RFValue(10), marginTop: RFValue(18), marginHorizontal: RFValue(16), height: RFValue(50), justifyContent: 'center', alignItems: 'center', paddingHorizontal: RFValue(12), borderWidth: RFValue(1), borderColor: '#707070', backgroundColor: item.isSelected ? 'white' : 'transparent' }, item.isSelected && shadow]}>
-                <Text style={{ fontSize: RFValue(24), fontFamily: Fonts.apercuMedium, color: '#707070' }}>{item.name}</Text>
+                <Text style={{ fontSize: RFValue(24), fontFamily: Fonts.apercuMedium, color: item.isSelected ? '#463795' : '#707070' }}>{item.name}</Text>
               </TouchableOpacity>)
           }} />
 
-        <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(12), color: '#707070' }}>AGE</Text>
+        <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(12), color: '#707070', marginTop: RFValue(16) }}>AGE</Text>
+        <View style={{ flexDirection: 'row', alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ marginEnd: 18, fontSize: 14, fontFamily: Fonts.apercuMedium, color: 'rgba(112,112,112, 0.5)' }}>18</Text>
+          <MultiSlider
+            isMarkersSeparated={true}
+            values={[this.state.ageStart, this.state.ageEnd]}
+            min={18}
+            max={50}
+            step={1}
+            Style={{
+              container: { backgroundColor: '#463795', height: 28 },
+              track: { backgroundColor: '#463795', height: 28 },
+              selected: { backgroundColor: '#463795' },
+              unselected: { backgroundColor: '#707070' },
+              markerContainer: { borderWidth: 3, borderColor: 'black' },
+              marker: { backgroundColor: 'blue' },
+              pressedMarker: { backgroundColor: '#463795' }
+            }}
+            onValuesChangeFinish={(values) => {
+              this.setState({ ageStart: values[0], ageEnd: values[1] })
+            }}
+            customMarkerLeft={(e) => <View style={{ backgroundColor: 'white', width: 28, height: 28, borderRadius: 14, borderWidth: 0.5, borderColor: '#707070', justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ fontFamily: Fonts.apercuMedium, fontSize: 14, color: '#707070' }}>{e.currentValue}</Text>
+            </View>}
+            customMarkerRight={(e) => <View style={{ backgroundColor: 'white', width: 28, height: 28, borderRadius: 14, borderWidth: 0.5, borderColor: '#707070', justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ fontFamily: Fonts.apercuMedium, fontSize: 14, color: '#707070' }}>{e.currentValue}</Text>
+            </View>}
+          />
+          <Text style={{ marginStart: 18, fontSize: 14, fontFamily: Fonts.apercuMedium, color: 'rgba(112,112,112, 0.5)' }}>50</Text>
+        </View>
 
-        <TouchableOpacity style={{marginTop:50, height:RFValue(50), width:Dimensions.get('window').width*0.9, backgroundColor:'#463795', justifyContent:'center', alignItems:'center'} }>
-          <Text style={{fontSize:18, fontFamily:Fonts.apercuMedium, color:'white'}}>SEARCH</Text>
+        <TouchableOpacity onPress={()=>this.props.navigation.navigate('SearchScreen', {topColor: this._selectColor()[0], selectedCategory: this.state.selectedCategory})} style={{ marginTop: RFValue(16), borderRadius: RFValue(25), height: RFValue(50), width: Dimensions.get('window').width * 0.9, backgroundColor: '#463795', justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ fontSize: 18, fontFamily: Fonts.apercuMedium, color: 'white' }}>SEARCH</Text>
         </TouchableOpacity>
 
 
@@ -247,14 +289,14 @@ export default class PackagesList extends Component {
   }
 
   _openSearchModal() {
-    this.SwipeUpDown.showFull();
-    //this.flatListRef.scrollToIndex( { animated: false, index: this.state.selectedCategory.id, viewOffset:0.5, viewPosition:0.5 });
+    //this.SwipeUpDown.showFull();
+    setTimeout(() => this.flatListRef.scrollToIndex({ animated: true, index: this.state.selectedCategory.id - 1 }), 1500);
     this.setState({ isSearchModalOpen: true });
   }
 
   _renderSearchModalButton = () => {
     return (
-      <TouchableOpacity onPress={() => this._openSearchModal()} style={{ borderTopLeftRadius: RFValue(20), borderTopRightRadius: RFValue(20), backgroundColor: '#F7F7F7', justifyContent: 'center', alignItems: 'center', height: RFValue(70), width: Dimensions.get('window').width * 0.8, alignSelf: 'center', marginBottom: '-3%' }}>
+      <TouchableOpacity onPress={() => this._openSearchModal()} style={{ borderTopLeftRadius: RFValue(20), borderTopRightRadius: RFValue(20), backgroundColor: '#F7F7F7', justifyContent: 'center', alignItems: 'center', height: RFValue(60), width: Dimensions.get('window').width * 0.8, alignSelf: 'center', marginBottom: '-5%' }}>
         <Text style={{ fontSize: RFValue(18), fontFamily: Fonts.apercuMedium, color: '#707070', alignSelf: 'center' }}>Tap to Search</Text>
       </TouchableOpacity>
     )
@@ -269,16 +311,29 @@ export default class PackagesList extends Component {
         {this._renderList()}
         {this.state.isDarwerOpen && this._renderBackDrop()}
         {!this.state.isSearchModalOpen && this.state.selectedService === ServiceTypes.longTerm && this._renderSearchModalButton()}
-        <SwipeUpDown
+        <Modal
+          style={{ zIndex: 0 }}
+          hasBackdrop={false}
+          coverScreen={false}
+          isVisible={this.state.isSearchModalOpen}>
+          {this._renderFullItem()}
+        </Modal>
+
+        {/* <SwipeUpDown
           hasRef={ref => this.SwipeUpDown = ref}
           swipeHeight={100}
-          //itemMini={this._renderMiniItem()}
-          onShowMini={() => this.setState({ isSearchModalOpen: false })}
-          //onMoveDown={() => this.setState({ isSearchModalOpen: false })}
+          onShowMini={
+            () => {
+              this.setState({ isSearchModalOpen: false })
+              setTimeout(() => this.flatListRef.scrollToIndex({ animated: true, index: this.state.selectedCategory.id - 1, viewOffset: 0, viewPosition: 0.5 }), 1000)
+            }}
+          onShowFull={() => {
+            setTimeout(() => this.flatListRef.scrollToIndex({ animated: true, index: this.state.selectedCategory.id - 1 }), 1500)
+          }}
           itemFull={this._renderFullItem()}
           disablePressToShow={true}
           style={{ position: 'absolute', backgroundColor: 'transparent', bottom: 0 }} // style for swipe
-        />
+        /> */}
       </LinearGradient>
     );
   }

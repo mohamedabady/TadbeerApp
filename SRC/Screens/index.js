@@ -15,3 +15,6 @@ export {Profile};
 
 import PackagesList from './PackagesListScreen/PackagesList';
 export {PackagesList};
+
+import SearchScreen from './SearchScreen/SearchScreen';
+export {SearchScreen};

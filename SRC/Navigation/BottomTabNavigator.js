@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Image, View, Text } from 'react-native';
+import { Image, View, Text, Dimensions } from 'react-native';
 
 //Import Tab Screens
 import { Candidates, Centers, Profile, Requests } from '../Screens/index';
 
-import {HomeStack} from './AppStackNavigators'
+import { HomeStack } from './AppStackNavigators'
 
 //Import Packages
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
@@ -62,11 +62,11 @@ export default class BottomNavigator extends Component {
     }
 
     renderIcon = iconSource => ({ isActive }) => (
-        <Image resizeMode='contain' source={iconSource} style={{ width: 20, height: 20, tintColor: Colors.mainColor }} />
+        <Image resizeMode='contain' source={iconSource} style={{ width: 20, height: 20 }} />
     )
 
     renderTab = ({ tab, isActive }) => (
-        <LinearGradient colors={isActive? [Colors.tabGrdientTop, Colors.tabGradientBottom]: ['white','white']}>
+        <LinearGradient colors={isActive ? [Colors.tabGrdientTop, Colors.tabGradientBottom] : ['white', 'white']}>
             <FullTab
                 isActive={isActive}
                 key={tab.key}
@@ -82,13 +82,14 @@ export default class BottomNavigator extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    {this.state.activeTab === 'Home' && <HomeStack/>}
-                    {this.state.activeTab === 'Candidates' && <Candidates/>}
-                    {this.state.activeTab === 'Centers' && <Centers/>}
-                    {this.state.activeTab === 'Requests' && <Requests/>}
-                    {this.state.activeTab === 'Profile' && <Profile/>}
+                    {this.state.activeTab === 'Home' && <HomeStack />}
+                    {this.state.activeTab === 'Candidates' && <Candidates />}
+                    {this.state.activeTab === 'Centers' && <Centers />}
+                    {this.state.activeTab === 'Requests' && <Requests />}
+                    {this.state.activeTab === 'Profile' && <Profile />}
                 </View>
                 <BottomNavigation
+                    style={{ height: Dimensions.get('window').height * 0.09 }}
                     activeTab={this.state.activeTab}
                     onTabPress={newTab => this.setState({ activeTab: newTab.key })}
                     renderTab={this.renderTab}

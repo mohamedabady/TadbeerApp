@@ -52,7 +52,7 @@ export default class DrawerScreen extends Component {
 
                 {this.renderLanguageSwitch()}
 
-                <Image resizeMode='contain' source={require('../../Assets/Images/HREmbassyLogo.png')} style={{ width: RFValue(180) }} />
+                <Image resizeMode='contain' source={require('../../Assets/Images/HREmbassyLogo.png')} style={{ width: RFValue(180), marginTop:RFValue(32) }} />
             </View>
         )
     }
@@ -64,7 +64,7 @@ export default class DrawerScreen extends Component {
                 style={{ zIndex: 1200 }}
                 open={this.props.isDrawerOpen}
                 drawerContent={this.renderContentView()}
-                drawerPercentage={70}
+                drawerPercentage={85}
                 animationTime={250}
                 overlay={true}
                 opacity={0.8}/>

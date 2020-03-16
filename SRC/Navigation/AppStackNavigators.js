@@ -3,8 +3,7 @@ import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 //Import Screens
-import Home from '../Screens/HomeScreen/Home';
-import PackagesList from '../Screens/PackagesListScreen/PackagesList';
+import {Home, PackagesList, SearchScreen} from '../Screens';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +13,7 @@ export function HomeStack() {
             <Stack.Navigator initialRouteName={Home} headerMode='none'>
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="PackagesList" component={PackagesList} />
+                <Stack.Screen name="SearchScreen" component={SearchScreen} />
             </Stack.Navigator>
         </View>
     )

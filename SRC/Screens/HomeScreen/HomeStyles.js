@@ -5,12 +5,13 @@ export const HomeStyles = StyleSheet.create({
     mainContainer:{ 
         flex: 1,
         width:Dimensions.get('window').width, 
-        alignItems:'center' 
+        alignItems:'center',
+        justifyContent:'center' 
     },
     titleText:{
         fontFamily: 'Apercu Medium', 
         fontSize:14, 
-        marginVertical: 24,
+        paddingBottom: 12,
         color:'white'
     },
     mainButton:{
