@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 //Import Screens
-import {Home, PackagesList, SearchScreen} from '../Screens';
+import {Home, PackagesList, SearchScreen, FullFilterScreen} from '../Screens';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +14,7 @@ export function HomeStack() {
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="PackagesList" component={PackagesList} />
                 <Stack.Screen name="SearchScreen" component={SearchScreen} />
+                <Stack.Screen name="FullFilter" component={FullFilterScreen} />
             </Stack.Navigator>
         </View>
     )

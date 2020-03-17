@@ -152,7 +152,7 @@ export default class SearchScreen extends Component {
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => {
                     return (
-                        <TouchableOpacity style={{ flexDirection: 'row', marginEnd: RFValue(16), borderRadius: RFValue(14), height: RFValue(28), paddingHorizontal: RFValue(12), borderWidth: RFValue(1), borderColor: '#707070', justifyContent: 'center', alignItems: 'center' }}>
+                        <TouchableOpacity onPress={()=> item.id === 0 && this.props.navigation.navigate('FullFilter', {topColor: this.topColor})} style={{ flexDirection: 'row', marginEnd: RFValue(16), borderRadius: RFValue(14), height: RFValue(28), paddingHorizontal: RFValue(12), borderWidth: RFValue(1), borderColor: '#707070', justifyContent: 'center', alignItems: 'center' }}>
                             {item.id === 0 && <Image resizeMode='center' style={{ width: RFValue(11), height: RFValue(8), marginEnd: RFValue(8) }} source={require('../../Assets/Images/fullFilter.png')} />}
                             <Text style={{ fontFamily: Fonts.apercuMedium, fontSize: RFValue(14), color: Colors.mainColor }}>{item.text}</Text>
                         </TouchableOpacity>

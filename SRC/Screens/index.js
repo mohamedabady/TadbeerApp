@@ -18,3 +18,6 @@ export {PackagesList};
 
 import SearchScreen from './SearchScreen/SearchScreen';
 export {SearchScreen};
+
+import FullFilterScreen from './FullFilterScreen/FullFilter';
+export {FullFilterScreen};
