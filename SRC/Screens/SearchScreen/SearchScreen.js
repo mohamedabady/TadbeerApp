@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { Fonts } from '../../Constants/Fonts';
 import { Colors } from '../../Constants/Colors';
-import MultiSlider from '@ptomasroos/react-native-multi-slider';
+import MultiSlider from '../../CustomPackages/@ptomasroos/react-native-multi-slider/MultiSlider';
 
 export default class SearchScreen extends Component {
     Height = Dimensions.get('window').height;
@@ -197,7 +197,7 @@ export default class SearchScreen extends Component {
                     <Text style={{ textAlign: "center", fontFamily: Fonts.apercu, fontSize: RFValue(12), color: '#2F2F2F' }}>{worker.processingFees} PROCESSING FEES</Text>
                 </View>
 
-                <TouchableOpacity style={{ height: RFValue(40), width: '100%', borderRadius: RFValue(20), backgroundColor: Colors.mainColor, justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('WorkerProfile', {topColor: this.topColor})} style={{ height: RFValue(40), width: '100%', borderRadius: RFValue(20), backgroundColor: Colors.mainColor, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(14), color: 'white' }}>VIEW PROFILE</Text>
                 </TouchableOpacity>
             </View>

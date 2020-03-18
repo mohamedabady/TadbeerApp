@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { RFValue } from "react-native-responsive-fontsize";
 import { TouchableOpacity, TextInput, FlatList } from 'react-native-gesture-handler';
 import SwipeUpDown from 'react-native-swipe-up-down';
-import MultiSlider from '@ptomasroos/react-native-multi-slider';
+import MultiSlider from '../../CustomPackages/@ptomasroos/react-native-multi-slider/MultiSlider';
 import Modal from "react-native-modal";
 
 //Constants Import

@@ -8,7 +8,8 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { Fonts } from '../../Constants/Fonts';
 import { Colors } from '../../Constants/Colors';
 import { Categories, Countries, Packages } from '../../Screens/PackagesListScreen/StaticData'
-import MultiSlider from '@ptomasroos/react-native-multi-slider';
+import MultiSlider from '../../CustomPackages/@ptomasroos/react-native-multi-slider/MultiSlider';
+import { Dropdown } from 'react-native-material-dropdown';
 
 const GenderTypes = {
     male: 'MALE',
@@ -24,6 +25,12 @@ export default class FullFilter extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            serviceCenter: 'All',
+            emirate: 'All',
+            serviceType: 'All',
+            religion: 'All',
+            language: 'All',
+            maritalStatus: 'All',
             selectedGender: GenderTypes.male,
             countries: Countries,
             packages: Packages,
@@ -52,14 +59,34 @@ export default class FullFilter extends Component {
         )
     }
 
-    _renderDropDown = (title, dataPlaceholder) => {
+    _renderDropDown = (title, data, value, onChangeValue) => {
         return (
             <View style={{ marginBottom: RFValue(12) }}>
                 <Text style={{ marginBottom: RFValue(10), fontSize: RFValue(12), fontFamily: Fonts.apercuBold, color: '#707070' }}>{title}</Text>
-                <TouchableOpacity style={{ width: '100%', height: RFValue(40), borderRadius: RFValue(10), borderWidth: 1, borderColor: '#B9B9B9', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: RFValue(12) }}>
+                <View style={{ width: '100%', height: RFValue(40), borderRadius: RFValue(10), borderWidth: 1, borderColor: '#B9B9B9', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: RFValue(12) }}>
+                    <Dropdown
+                        fontSize={RFValue(12)}
+                        baseColor='transparent'
+                        textColor='#707070'
+                        itemColor='#707070'
+                        selectedItemColor='#707070'
+                        disabledItemColor='black'
+                        dropdownOffset={{top:15, left:0}}
+                        dropdownPosition={0}
+                        itemCount={5}
+                        //itemPadding={RFValue(8)}
+                        containerStyle={{width:'95%'}}
+                        itemTextStyle={{fontFamily: Fonts.apercuLight, fontSize: RFValue(12) }}
+                        value={value}
+                        pickerStyle={{ width: '95%', borderRadius: RFValue(10),  shadowColor: 'black', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.7, elevation: 3, paddingHorizontal: RFValue(12) }}
+                        data={data}
+                        onChangeText={(value) => onChangeValue(value)} />
+                    <Image resizeMode='contain' style={{ height: RFValue(12), width: RFValue(12) }} source={require('../../Assets/Images/dropDownArrow.png')} />
+                </View>
+                {/* <TouchableOpacity style={{ width: '100%', height: RFValue(40), borderRadius: RFValue(10), borderWidth: 1, borderColor: '#B9B9B9', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: RFValue(12) }}>
                     <Text style={{ fontSize: RFValue(12), fontFamily: Fonts.apercuLight, color: '#707070' }}>{dataPlaceholder}</Text>
                     <Image resizeMode='contain' style={{ height: RFValue(12), width: RFValue(12) }} source={require('../../Assets/Images/dropDownArrow.png')} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         )
     }
@@ -181,7 +208,7 @@ export default class FullFilter extends Component {
             borderWidth: 0
         }
         return (
-            <View style={{ marginBottom:RFValue(16), height: RFValue(95) }}>
+            <View style={{ marginBottom: RFValue(16), height: RFValue(95) }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
                     <Text style={{ fontSize: RFValue(12), fontFamily: Fonts.apercuBold, color: '#707070' }}>NATIONALITY</Text>
                     <TouchableOpacity style={{ borderRadius: RFValue(10), height: RFValue(20), paddingHorizontal: RFValue(10), borderWidth: RFValue(1), borderColor: '#707070', justifyContent: 'center', alignItems: 'center' }}>
@@ -213,7 +240,7 @@ export default class FullFilter extends Component {
 
     _renderAgeSlider = () => {
         return (
-            <View style={{marginBottom:RFValue(12)}}>
+            <View style={{ marginBottom: RFValue(12) }}>
                 <Text style={{ fontSize: RFValue(12), fontFamily: Fonts.apercuBold, color: '#707070' }}>AGE</Text>
                 <View style={{ flexDirection: 'row', alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ marginEnd: 18, fontSize: 14, fontFamily: Fonts.apercuMedium, color: 'rgba(112,112,112, 0.5)' }}>18</Text>
@@ -260,7 +287,7 @@ export default class FullFilter extends Component {
             borderWidth: 0
         }
         return (
-            <View style={{ marginBottom:RFValue(16), height: RFValue(110) }}>
+            <View style={{ marginBottom: RFValue(16), height: RFValue(110) }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: RFValue(16) }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(12), color: '#707070' }}>PACKAGES</Text>
@@ -296,7 +323,7 @@ export default class FullFilter extends Component {
 
     _renderExperienceSlider = () => {
         return (
-            <View style={{marginBottom:RFValue(12)}}>
+            <View style={{ marginBottom: RFValue(12) }}>
                 <Text style={{ fontSize: RFValue(12), fontFamily: Fonts.apercuBold, color: '#707070' }}>YEARS OF EXPERIENCE</Text>
                 <View style={{ flexDirection: 'row', alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ marginEnd: 18, fontSize: 14, fontFamily: Fonts.apercuMedium, color: 'rgba(112,112,112, 0.5)' }}>0</Text>
@@ -372,29 +399,27 @@ export default class FullFilter extends Component {
     _renderContainer = () => {
         return (
             <View style={{ paddingVertical: RFValue(16), paddingHorizontal: RFValue(12), height: this.Height * 0.74, width: this.Width, backgroundColor: '#F7F7F7', borderTopLeftRadius: RFValue(20), borderTopRightRadius: RFValue(20) }}>
-                <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:RFValue(50)}}>
+                <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: RFValue(50) }}>
                     {this._renderResetButton()}
-                    {this._renderDropDown('SERVICE TYPE', 'House maid')}
+                    {this._renderDropDown('SERVICE TYPE', [{value: 'All'}, {value : 'Long term'}, {value: 'Short term'}, {value:'Flexible'}], this.state.serviceType, (value) => this.setState({ serviceType: value }))}
                     {this._renderDatePicker()}
                     {this._renderGenderSelector()}
                     {this._renderNationalitySelector()}
                     {this._renderAgeSlider()}
-                    {this._renderDropDown('RELIGION', 'All')}
-                    {this._renderDropDown('SPOKEN LANGUAGES', 'ALL')}
+                    {this._renderDropDown('RELIGION', [{value:'All'}, {value: 'Muslim'}, {value : 'Christian'}, {value: 'Hindu'}, {value: 'Urdu'}], this.state.religion, (value) => this.setState({ religion: value }))}
+                    {this._renderDropDown('SPOKEN LANGUAGES', [{value:'All'}, {value:'English'}, {value:'Arabic'}, {value:'Indian'}, {value:'French'}, {value:'Spanish'}], this.state.language, (value) => this.setState({ language: value }))}
                     {this._renderPackages()}
                     {this._renderExperienceSlider()}
-                    {this._renderDropDown('MARITAL STATUS', 'All')}
-                    <View style={{ width: '100%', height: 1, backgroundColor: 'rgba(112,112,112,0.1)', marginVertical:RFValue(16), marginBottom: RFValue(24) }} />
-                    {this._renderDropDown('EMIRATES', 'All')}
-                    {this._renderDropDown('SERVICE CENTERS', 'All')}
+                    {this._renderDropDown('MARITAL STATUS', [{value:'All'}, {value:'Married'}, {value:'Single'}, {value:'Divorced'}], this.state.maritalStatus, (value) => this.setState({ maritalStatus: value }))}
+                    <View style={{ width: '100%', height: 1, backgroundColor: 'rgba(112,112,112,0.1)', marginVertical: RFValue(16), marginBottom: RFValue(24) }} />
+                    {this._renderDropDown('EMIRATES', [{value:'All'}, {value:'Abu Dhabi'}, {value:'Dubai'}, {value:'Sharjah'}, {value:'Al-Ein'}], this.state.emirate, (value) => this.setState({ emirate: value }))}
+                    {this._renderDropDown('SERVICE CENTERS', [{value:'All'}, {value:'Center 1'}, {value:'Center 2'}, {value:'Center 3'}], this.state.serviceCenter, (value) => this.setState({ serviceCenter: value }))}
                     {this._renderDistanceSlider()}
                     {this._renderSubmitButton()}
                 </ScrollView>
             </View>
         )
     }
-
-
 
     render() {
         return (

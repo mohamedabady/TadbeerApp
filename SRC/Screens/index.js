@@ -21,3 +21,6 @@ export {SearchScreen};
 
 import FullFilterScreen from './FullFilterScreen/FullFilter';
 export {FullFilterScreen};
+
+import WorkerProfile from './WorkerProfile/WorkerProfile';
+export {WorkerProfile};

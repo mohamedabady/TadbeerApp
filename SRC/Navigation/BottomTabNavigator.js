@@ -89,7 +89,7 @@ export default class BottomNavigator extends Component {
                     {this.state.activeTab === 'Profile' && <Profile />}
                 </View>
                 <BottomNavigation
-                    style={{ height: Dimensions.get('window').height * 0.09 }}
+                    style={{ height: Dimensions.get('window').height * 0.08 }}
                     activeTab={this.state.activeTab}
                     onTabPress={newTab => this.setState({ activeTab: newTab.key })}
                     renderTab={this.renderTab}
