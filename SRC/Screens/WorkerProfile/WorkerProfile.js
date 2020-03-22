@@ -190,7 +190,7 @@ export default class WorkerProfile extends Component {
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => {
                         return (
-                            <View style={{ overflow: 'hidden', borderRadius: RFValue(10), marginTop: RFValue(12), marginHorizontal: RFValue(16), height: RFValue(65), width: RFValue(150), justifyContent: 'center', alignItems: 'center', paddingHorizontal: RFValue(12) }}>
+                            <View style={{ overflow: 'hidden', borderRadius: RFValue(10), marginTop: RFValue(12), marginHorizontal: RFValue(6), height: RFValue(65), width: RFValue(150), justifyContent: 'center', alignItems: 'center', paddingHorizontal: RFValue(12) }}>
                                 <View style={{ borderRadius: RFValue(10), height: RFValue(65), width: RFValue(150), overflow: 'hidden' }}>
                                     <Image resizeMode='cover' source={item.picture} style={{ height: RFValue(65), width: RFValue(150), borderRadius: RFValue(10) }} />
                                 </View>
@@ -228,18 +228,18 @@ export default class WorkerProfile extends Component {
         let isPackageSelected = this.state.selectedPackage === item.name;
         let fontStyle = { fontSize: RFValue(14), fontFamily: Fonts.apercuMedium, color: '#707070', paddingHorizontal: RFValue(6), marginBottom: RFValue(8) }
         return (
-            <TouchableOpacity onPress={() => this.setState({ selectedPackage: item.name })} style={{ marginBottom: RFValue(12), marginHorizontal: RFValue(4), backgroundColor: isPackageSelected ? 'rgba(70,55,149,0.1)' : 'white', borderRadius: RFValue(10), shadowColor: '#707070', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.7, elevation: 3, padding: RFValue(12), justifyContent: 'center', alignItems: 'center', width: Dimensions.get('window').width * 0.6 }}>
+            <TouchableOpacity onPress={() => this.setState({ selectedPackage: item.name })} style={{ marginBottom: RFValue(12), marginHorizontal: RFValue(4), backgroundColor: isPackageSelected ? 'rgba(70,55,149,0.1)' : 'white', borderRadius: RFValue(10), shadowColor: '#707070', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.7, elevation: 3, padding: RFValue(12), justifyContent: 'center', alignItems: 'center', width: Dimensions.get('window').width * 0.55 }}>
                 <Image resizeMode='contain' source={item.image} style={{ width: Dimensions.get('window').width * 0.3, height: Dimensions.get('window').height * 0.15 }} />
                 <Text style={{ fontFamily: Fonts.apercuBold, fontSize: RFValue(14), color: '#707070', marginBottom: RFValue(6) }}>{item.name}</Text>
-                <View style={{ flexDirection: 'row', width:'100%' }}>
+                <View style={{ flexDirection: 'row', justifyContent:'flex-start' }}>
                     <Text style={fontStyle}>&#8226;</Text>
                     <Text style={fontStyle}>Pay AED {item.processingFees} processing fees to bring and host a domestic worker from outside UAE.</Text>
                 </View>
-                <View style={{ flexDirection: 'row', width:'100%' }}>
+                <View style={{ flexDirection: 'row', justifyContent:'flex-start' }}>
                     <Text style={fontStyle}>&#8226;</Text>
                     <Text style={fontStyle}>Pay AED {item.salary} monthly salary</Text>
                 </View>
-                <View style={{ flexDirection: 'row', width:'100%' }}>
+                <View style={{ flexDirection: 'row', justifyContent:'flex-start' }}>
                     <Text style={fontStyle}>&#8226;</Text>
                     <Text style={fontStyle}>Processing takes {item.processingWeeks.join(' - ')} weeks</Text>
                 </View>

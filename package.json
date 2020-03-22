@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@ptomasroos/react-native-multi-slider": "^2.2.0",
+    "@react-native-community/async-storage": "^1.8.1",
     "@react-native-community/masked-view": "^0.1.7",
     "@react-navigation/bottom-tabs": "^5.1.1",
     "@react-navigation/native": "^5.0.9",
     "@react-navigation/stack": "^5.1.1",
+    "axios": "^0.19.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-elements": "^1.2.7",
@@ -26,10 +28,15 @@
     "react-native-reanimated": "^1.7.0",
     "react-native-responsive-fontsize": "^0.4.3",
     "react-native-safe-area-context": "^0.7.3",
+    "react-native-safe-area-view": "^1.0.0",
     "react-native-screens": "^2.3.0",
     "react-native-side-drawer": "^1.2.5",
     "react-native-swipe-up-down": "^1.0.7",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-vector-icons": "^6.6.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",

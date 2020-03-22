@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, TouchableWithoutFeedback, Image } from 'react-native';
+import { View, Text, Dimensions, TouchableWithoutFeedback, Image, ActivityIndicator } from 'react-native';
 
 //PackagesImport
 import LinearGradient from 'react-native-linear-gradient';
@@ -8,6 +8,7 @@ import { TouchableOpacity, TextInput, FlatList } from 'react-native-gesture-hand
 import SwipeUpDown from 'react-native-swipe-up-down';
 import MultiSlider from '../../CustomPackages/@ptomasroos/react-native-multi-slider/MultiSlider';
 import Modal from "react-native-modal";
+import AsyncStorage from '@react-native-community/async-storage';
 
 //Constants Import
 import { Colors } from '../../Constants/Colors';
@@ -38,10 +39,20 @@ export default class PackagesList extends Component {
       countries: Countries,
       packages: Packages,
       ageStart: 18,
-      ageEnd: 50
+      ageEnd: 50,
+      isLoading: false
     };
     this._renderList = this._renderList.bind(this);
   }
+
+  // componentDidMount() {
+  //   this.setState({ isLoading: true });
+  //   let savedCountries;
+  //   AsyncStorage.getItem('Countries', (error, result) => {
+  //     savedCountries = JSON.parse(result);
+  //     this.setState({ countries: savedCountries }, () => this.setState({ isLoading: false }))
+  //   })
+  // }
 
   _renderSearchBar = () => {
     return (
@@ -278,7 +289,7 @@ export default class PackagesList extends Component {
           <Text style={{ marginStart: 18, fontSize: 14, fontFamily: Fonts.apercuMedium, color: 'rgba(112,112,112, 0.5)' }}>50</Text>
         </View>
 
-        <TouchableOpacity onPress={()=>this.props.navigation.navigate('SearchScreen', {topColor: this._selectColor()[0], selectedCategory: this.state.selectedCategory})} style={{ marginTop: RFValue(16), borderRadius: RFValue(25), height: RFValue(50), width: Dimensions.get('window').width * 0.9, backgroundColor: '#463795', justifyContent: 'center', alignItems: 'center' }}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchScreen', { topColor: this._selectColor()[0], selectedCategory: this.state.selectedCategory })} style={{ marginTop: RFValue(16), borderRadius: RFValue(25), height: RFValue(50), width: Dimensions.get('window').width * 0.9, backgroundColor: '#463795', justifyContent: 'center', alignItems: 'center' }}>
           <Text style={{ fontSize: 18, fontFamily: Fonts.apercuMedium, color: 'white' }}>SEARCH</Text>
         </TouchableOpacity>
 
@@ -305,6 +316,7 @@ export default class PackagesList extends Component {
   render() {
     return (
       <LinearGradient colors={[this._selectColor()[0], Colors.mainColor]} style={styles.screenContainer}>
+        {this.state.isLoading && <ActivityIndicator animating={this.state.isLoading} />}
         <DrawerMenu isDrawerOpen={this.state.isDarwerOpen} closeDrawer={() => this.setState({ isDarwerOpen: false })} isEnglish={this.state.isEnglish} />
         {this._renderSearchBar()}
         {this._renderTopTabBar()}

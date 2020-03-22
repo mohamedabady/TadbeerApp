@@ -24,3 +24,6 @@ export {FullFilterScreen};
 
 import WorkerProfile from './WorkerProfile/WorkerProfile';
 export {WorkerProfile};
+
+import Splash from './Splash';
+export {Splash};
