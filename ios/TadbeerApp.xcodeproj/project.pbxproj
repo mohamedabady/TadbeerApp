@@ -16,6 +16,45 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TadbeerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TadbeerAppTests.m */; };
+		236052165C6F458686ADFF43 /* Apercu Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09FB49381CE444FEA48633A9 /* Apercu Black.ttf */; };
+		94BCD6B6602F46CCBB5AB05C /* Apercu Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7621121ECE134807B83B1896 /* Apercu Bold Italic.otf */; };
+		1DF0814C99194AFCA128EEDB /* Apercu Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDF91489323542DCA367DC6F /* Apercu Bold.ttf */; };
+		BAB92BA6212B4909A509239A /* Apercu Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCFEAF237373456487BA3FAE /* Apercu Italic.otf */; };
+		1D473B01E1304E4D95238238 /* Apercu Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFE5695A3165412FB4EBCA03 /* Apercu Light Italic.otf */; };
+		626527BA07A9435182FA4EB7 /* Apercu Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B200C916C9394FCCAEFAB236 /* Apercu Light.otf */; };
+		462DE8B21C4E4A3A851F9074 /* Apercu Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C34A0808E254962AD7BFF3E /* Apercu Medium Italic.otf */; };
+		489DBAE9ADF345E4A78A4309 /* Apercu Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5A7953960F40AE9C54EC99 /* Apercu Medium.ttf */; };
+		9E0516DA1103439FA1C2E5F7 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDD22F4D5CCC42CD903DB6B1 /* Apercu Mono.otf */; };
+		597DEC637B3E4606AEF28AD4 /* Apercu Pro Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA01CF9173A44B10A9269350 /* Apercu Pro Bold Italic.otf */; };
+		E876292FFA3644D990A2B4E1 /* Apercu Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E31F48FA5BC40D098E0BA8A /* Apercu Pro Bold.otf */; };
+		FD59B1AD73694258B4CDE9BA /* Apercu Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F798E891D51A499AB45BBDE5 /* Apercu Pro Italic.otf */; };
+		EE9B85F8D68B42C0A4E7998B /* Apercu Pro Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65248E7044824B5996338632 /* Apercu Pro Light Italic.otf */; };
+		A3BDE8EEAE994F498EA02E06 /* Apercu Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 763B20F6295240C0AAF9E92B /* Apercu Pro Light.otf */; };
+		A8656881329442BD84B60CCE /* Apercu Pro Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CF59A8A46E74B55B57C8E4A /* Apercu Pro Medium Italic.otf */; };
+		CC43C90179F14EAF820C84D8 /* Apercu Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87892B8770C3462289194EFA /* Apercu Pro Medium.otf */; };
+		2D04BAACB2304DBD9984A2F4 /* Apercu Pro Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4C2A64BBA9C42F4A2CE061C /* Apercu Pro Mono.otf */; };
+		722806E3B2704E3F8047A164 /* Apercu Pro Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EA28029851E4F84998EDBAD /* Apercu Pro Regular.otf */; };
+		C2913150CEF140829BBA6163 /* Apercu Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685CC5D11B3C493EA824094E /* Apercu Regular.ttf */; };
+		08F8832337BE4F1B92C9AD5E /* Dubai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA738B9AB6E84EC6A9CE61EE /* Dubai-Bold.ttf */; };
+		9A7CFABAC150491B8FA9142F /* Dubai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AC519AD80A7490A8DB5375D /* Dubai-Light.ttf */; };
+		11A5E2B221D845F6B0500108 /* Dubai-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A68E71334C9A91FF33DF /* Dubai-Medium.ttf */; };
+		D0F7599FEDED4CBD816D82A4 /* Dubai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D31DDEACD17E4A60895F7A62 /* Dubai-Regular.ttf */; };
+		C1C6AFD367A341EDB0815BB7 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC3C590FDEDB47A4943F100B /* AntDesign.ttf */; };
+		C4292941D4D2441BAE5A6B8A /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94C2B28483D4B0D83B73A9E /* Entypo.ttf */; };
+		F1EC9AEBB5F04BD6BB448F34 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B48D3D7AF80B49DCAA011DFD /* EvilIcons.ttf */; };
+		53C45B4A3E034BDA8937A996 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6E3BFB32B114B04AECA161C /* Feather.ttf */; };
+		358FDDEC57BD422289B49BCC /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5BE76D24A4C49FA8C37C851 /* FontAwesome.ttf */; };
+		BF8FA7C326B94FCDAD007864 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFFDB747129C4D169A19124F /* FontAwesome5_Brands.ttf */; };
+		34057EB2DD7F45A39D6218CD /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F785CF253C814897B326674B /* FontAwesome5_Regular.ttf */; };
+		ABFFAFC86DB648BF966642FD /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17F49CE7411441F8894E2557 /* FontAwesome5_Solid.ttf */; };
+		B9375B63FB8C457E922102BF /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2B605B7574CC5993588CE /* Fontisto.ttf */; };
+		F7A673632DE147A497170FBB /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D14D01ED54346BDA25A1A00 /* Foundation.ttf */; };
+		1EFF667C94A64736AB185596 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FCD570A93234805A80271FF /* Ionicons.ttf */; };
+		A80B55A719DF484AA4966F00 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A913556BE83470C9B670066 /* MaterialCommunityIcons.ttf */; };
+		53ED3312C8BB423787265BD5 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADE4D6A6561F447DB9002329 /* MaterialIcons.ttf */; };
+		052FA09EF8774586A333829F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23AAC69DAB6C43C29CABD545 /* Octicons.ttf */; };
+		4E8C1B2A050B4B2784CC8C6A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA3C041594704D56A78F75F4 /* SimpleLineIcons.ttf */; };
+		6F25EBB769EA4154BDD12FA0 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04E10645DEF4806AA1B68B8 /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +90,45 @@
 		2D02E4901E0B4A5D006451C7 /* TadbeerApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TadbeerApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		09FB49381CE444FEA48633A9 /* Apercu Black.ttf */ = {isa = PBXFileReference; name = "Apercu Black.ttf"; path = "../SRC/Assets/Fonts/Apercu Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7621121ECE134807B83B1896 /* Apercu Bold Italic.otf */ = {isa = PBXFileReference; name = "Apercu Bold Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Bold Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FDF91489323542DCA367DC6F /* Apercu Bold.ttf */ = {isa = PBXFileReference; name = "Apercu Bold.ttf"; path = "../SRC/Assets/Fonts/Apercu Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCFEAF237373456487BA3FAE /* Apercu Italic.otf */ = {isa = PBXFileReference; name = "Apercu Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BFE5695A3165412FB4EBCA03 /* Apercu Light Italic.otf */ = {isa = PBXFileReference; name = "Apercu Light Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Light Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B200C916C9394FCCAEFAB236 /* Apercu Light.otf */ = {isa = PBXFileReference; name = "Apercu Light.otf"; path = "../SRC/Assets/Fonts/Apercu Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2C34A0808E254962AD7BFF3E /* Apercu Medium Italic.otf */ = {isa = PBXFileReference; name = "Apercu Medium Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Medium Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DC5A7953960F40AE9C54EC99 /* Apercu Medium.ttf */ = {isa = PBXFileReference; name = "Apercu Medium.ttf"; path = "../SRC/Assets/Fonts/Apercu Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DDD22F4D5CCC42CD903DB6B1 /* Apercu Mono.otf */ = {isa = PBXFileReference; name = "Apercu Mono.otf"; path = "../SRC/Assets/Fonts/Apercu Mono.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA01CF9173A44B10A9269350 /* Apercu Pro Bold Italic.otf */ = {isa = PBXFileReference; name = "Apercu Pro Bold Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Bold Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E31F48FA5BC40D098E0BA8A /* Apercu Pro Bold.otf */ = {isa = PBXFileReference; name = "Apercu Pro Bold.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F798E891D51A499AB45BBDE5 /* Apercu Pro Italic.otf */ = {isa = PBXFileReference; name = "Apercu Pro Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		65248E7044824B5996338632 /* Apercu Pro Light Italic.otf */ = {isa = PBXFileReference; name = "Apercu Pro Light Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Light Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		763B20F6295240C0AAF9E92B /* Apercu Pro Light.otf */ = {isa = PBXFileReference; name = "Apercu Pro Light.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1CF59A8A46E74B55B57C8E4A /* Apercu Pro Medium Italic.otf */ = {isa = PBXFileReference; name = "Apercu Pro Medium Italic.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Medium Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		87892B8770C3462289194EFA /* Apercu Pro Medium.otf */ = {isa = PBXFileReference; name = "Apercu Pro Medium.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F4C2A64BBA9C42F4A2CE061C /* Apercu Pro Mono.otf */ = {isa = PBXFileReference; name = "Apercu Pro Mono.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Mono.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4EA28029851E4F84998EDBAD /* Apercu Pro Regular.otf */ = {isa = PBXFileReference; name = "Apercu Pro Regular.otf"; path = "../SRC/Assets/Fonts/Apercu Pro Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		685CC5D11B3C493EA824094E /* Apercu Regular.ttf */ = {isa = PBXFileReference; name = "Apercu Regular.ttf"; path = "../SRC/Assets/Fonts/Apercu Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA738B9AB6E84EC6A9CE61EE /* Dubai-Bold.ttf */ = {isa = PBXFileReference; name = "Dubai-Bold.ttf"; path = "../SRC/Assets/Fonts/Dubai-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9AC519AD80A7490A8DB5375D /* Dubai-Light.ttf */ = {isa = PBXFileReference; name = "Dubai-Light.ttf"; path = "../SRC/Assets/Fonts/Dubai-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DAB3A68E71334C9A91FF33DF /* Dubai-Medium.ttf */ = {isa = PBXFileReference; name = "Dubai-Medium.ttf"; path = "../SRC/Assets/Fonts/Dubai-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D31DDEACD17E4A60895F7A62 /* Dubai-Regular.ttf */ = {isa = PBXFileReference; name = "Dubai-Regular.ttf"; path = "../SRC/Assets/Fonts/Dubai-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DC3C590FDEDB47A4943F100B /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B94C2B28483D4B0D83B73A9E /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B48D3D7AF80B49DCAA011DFD /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E6E3BFB32B114B04AECA161C /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C5BE76D24A4C49FA8C37C851 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CFFDB747129C4D169A19124F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F785CF253C814897B326674B /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		17F49CE7411441F8894E2557 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		28A2B605B7574CC5993588CE /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D14D01ED54346BDA25A1A00 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1FCD570A93234805A80271FF /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9A913556BE83470C9B670066 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ADE4D6A6561F447DB9002329 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		23AAC69DAB6C43C29CABD545 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA3C041594704D56A78F75F4 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C04E10645DEF4806AA1B68B8 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +218,7 @@
 				00E356EF1AD99517003FC87E /* TadbeerAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				1E2FCE4FDF4C408088266AA4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +235,53 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		1E2FCE4FDF4C408088266AA4 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				09FB49381CE444FEA48633A9 /* Apercu Black.ttf */,
+				7621121ECE134807B83B1896 /* Apercu Bold Italic.otf */,
+				FDF91489323542DCA367DC6F /* Apercu Bold.ttf */,
+				BCFEAF237373456487BA3FAE /* Apercu Italic.otf */,
+				BFE5695A3165412FB4EBCA03 /* Apercu Light Italic.otf */,
+				B200C916C9394FCCAEFAB236 /* Apercu Light.otf */,
+				2C34A0808E254962AD7BFF3E /* Apercu Medium Italic.otf */,
+				DC5A7953960F40AE9C54EC99 /* Apercu Medium.ttf */,
+				DDD22F4D5CCC42CD903DB6B1 /* Apercu Mono.otf */,
+				EA01CF9173A44B10A9269350 /* Apercu Pro Bold Italic.otf */,
+				4E31F48FA5BC40D098E0BA8A /* Apercu Pro Bold.otf */,
+				F798E891D51A499AB45BBDE5 /* Apercu Pro Italic.otf */,
+				65248E7044824B5996338632 /* Apercu Pro Light Italic.otf */,
+				763B20F6295240C0AAF9E92B /* Apercu Pro Light.otf */,
+				1CF59A8A46E74B55B57C8E4A /* Apercu Pro Medium Italic.otf */,
+				87892B8770C3462289194EFA /* Apercu Pro Medium.otf */,
+				F4C2A64BBA9C42F4A2CE061C /* Apercu Pro Mono.otf */,
+				4EA28029851E4F84998EDBAD /* Apercu Pro Regular.otf */,
+				685CC5D11B3C493EA824094E /* Apercu Regular.ttf */,
+				EA738B9AB6E84EC6A9CE61EE /* Dubai-Bold.ttf */,
+				9AC519AD80A7490A8DB5375D /* Dubai-Light.ttf */,
+				DAB3A68E71334C9A91FF33DF /* Dubai-Medium.ttf */,
+				D31DDEACD17E4A60895F7A62 /* Dubai-Regular.ttf */,
+				DC3C590FDEDB47A4943F100B /* AntDesign.ttf */,
+				B94C2B28483D4B0D83B73A9E /* Entypo.ttf */,
+				B48D3D7AF80B49DCAA011DFD /* EvilIcons.ttf */,
+				E6E3BFB32B114B04AECA161C /* Feather.ttf */,
+				C5BE76D24A4C49FA8C37C851 /* FontAwesome.ttf */,
+				CFFDB747129C4D169A19124F /* FontAwesome5_Brands.ttf */,
+				F785CF253C814897B326674B /* FontAwesome5_Regular.ttf */,
+				17F49CE7411441F8894E2557 /* FontAwesome5_Solid.ttf */,
+				28A2B605B7574CC5993588CE /* Fontisto.ttf */,
+				9D14D01ED54346BDA25A1A00 /* Foundation.ttf */,
+				1FCD570A93234805A80271FF /* Ionicons.ttf */,
+				9A913556BE83470C9B670066 /* MaterialCommunityIcons.ttf */,
+				ADE4D6A6561F447DB9002329 /* MaterialIcons.ttf */,
+				23AAC69DAB6C43C29CABD545 /* Octicons.ttf */,
+				DA3C041594704D56A78F75F4 /* SimpleLineIcons.ttf */,
+				C04E10645DEF4806AA1B68B8 /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -240,7 +366,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -293,6 +419,45 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				236052165C6F458686ADFF43 /* Apercu Black.ttf in Resources */,
+				94BCD6B6602F46CCBB5AB05C /* Apercu Bold Italic.otf in Resources */,
+				1DF0814C99194AFCA128EEDB /* Apercu Bold.ttf in Resources */,
+				BAB92BA6212B4909A509239A /* Apercu Italic.otf in Resources */,
+				1D473B01E1304E4D95238238 /* Apercu Light Italic.otf in Resources */,
+				626527BA07A9435182FA4EB7 /* Apercu Light.otf in Resources */,
+				462DE8B21C4E4A3A851F9074 /* Apercu Medium Italic.otf in Resources */,
+				489DBAE9ADF345E4A78A4309 /* Apercu Medium.ttf in Resources */,
+				9E0516DA1103439FA1C2E5F7 /* Apercu Mono.otf in Resources */,
+				597DEC637B3E4606AEF28AD4 /* Apercu Pro Bold Italic.otf in Resources */,
+				E876292FFA3644D990A2B4E1 /* Apercu Pro Bold.otf in Resources */,
+				FD59B1AD73694258B4CDE9BA /* Apercu Pro Italic.otf in Resources */,
+				EE9B85F8D68B42C0A4E7998B /* Apercu Pro Light Italic.otf in Resources */,
+				A3BDE8EEAE994F498EA02E06 /* Apercu Pro Light.otf in Resources */,
+				A8656881329442BD84B60CCE /* Apercu Pro Medium Italic.otf in Resources */,
+				CC43C90179F14EAF820C84D8 /* Apercu Pro Medium.otf in Resources */,
+				2D04BAACB2304DBD9984A2F4 /* Apercu Pro Mono.otf in Resources */,
+				722806E3B2704E3F8047A164 /* Apercu Pro Regular.otf in Resources */,
+				C2913150CEF140829BBA6163 /* Apercu Regular.ttf in Resources */,
+				08F8832337BE4F1B92C9AD5E /* Dubai-Bold.ttf in Resources */,
+				9A7CFABAC150491B8FA9142F /* Dubai-Light.ttf in Resources */,
+				11A5E2B221D845F6B0500108 /* Dubai-Medium.ttf in Resources */,
+				D0F7599FEDED4CBD816D82A4 /* Dubai-Regular.ttf in Resources */,
+				C1C6AFD367A341EDB0815BB7 /* AntDesign.ttf in Resources */,
+				C4292941D4D2441BAE5A6B8A /* Entypo.ttf in Resources */,
+				F1EC9AEBB5F04BD6BB448F34 /* EvilIcons.ttf in Resources */,
+				53C45B4A3E034BDA8937A996 /* Feather.ttf in Resources */,
+				358FDDEC57BD422289B49BCC /* FontAwesome.ttf in Resources */,
+				BF8FA7C326B94FCDAD007864 /* FontAwesome5_Brands.ttf in Resources */,
+				34057EB2DD7F45A39D6218CD /* FontAwesome5_Regular.ttf in Resources */,
+				ABFFAFC86DB648BF966642FD /* FontAwesome5_Solid.ttf in Resources */,
+				B9375B63FB8C457E922102BF /* Fontisto.ttf in Resources */,
+				F7A673632DE147A497170FBB /* Foundation.ttf in Resources */,
+				1EFF667C94A64736AB185596 /* Ionicons.ttf in Resources */,
+				A80B55A719DF484AA4966F00 /* MaterialCommunityIcons.ttf in Resources */,
+				53ED3312C8BB423787265BD5 /* MaterialIcons.ttf in Resources */,
+				052FA09EF8774586A333829F /* Octicons.ttf in Resources */,
+				4E8C1B2A050B4B2784CC8C6A /* SimpleLineIcons.ttf in Resources */,
+				6F25EBB769EA4154BDD12FA0 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
